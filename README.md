@@ -9,6 +9,7 @@ This repository currently contains a polished, working personal profile site for
 - Responsive design
 - Linux install script for `xfreerdp`
 - Linux connection script for connecting to an RDP server
+- Smoke test script for validation
 
 ## Website project
 Open `index.html` directly in a browser, or run:
@@ -42,6 +43,14 @@ Example direct command:
 
 ```bash
 xfreerdp /u:administrator /p:Password123 /v:192.168.1.10:3389 /cert:ignore /f
+```
+
+## Smoke test
+To validate the repo without needing a browser:
+
+```bash
+chmod +x smoke_test.sh
+./smoke_test.sh
 ```
 
 ## Notes
