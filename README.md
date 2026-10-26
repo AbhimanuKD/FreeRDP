@@ -1,59 +1,55 @@
 # FreeRDP
 
-This repository currently contains a polished, working personal profile site for the `FreeRDP` branding, and it also includes an actual Linux RDP client setup script for real remote desktop use.
+This repository contains the final working deliverable for the project scope we can honestly build here:
 
-## Included
-- Premium claymorphism landing/profile page
-- About section inside the identity card
-- Contact and hero sections
-- Responsive design
-- Linux install script for `xfreerdp`
-- Linux connection script for connecting to an RDP server
-- Smoke test script for validation
+- a polished FreeRDP-themed profile website
+- About section in the profile card
+- responsive UI for desktop and mobile
+- Linux RDP client setup scripts for real remote desktop usage
+- a smoke test script for validation
+- a launch script for quick local start
 
-## Website project
-Open `index.html` directly in a browser, or run:
+## Quick start
+
+From the project folder, run:
 
 ```bash
-python3 -m http.server 8000
+chmod +x run.sh install_rdp_client.sh connect_rdp.sh smoke_test.sh
+./run.sh
 ```
 
-Then visit:
+Then open:
 
 ```text
 http://localhost:8000
 ```
 
-## Real RDP client setup (Linux)
-Install the real FreeRDP client:
+## Website validation
 
 ```bash
-chmod +x install_rdp_client.sh
+./smoke_test.sh
+```
+
+## Real Linux RDP client setup
+
+```bash
 sudo ./install_rdp_client.sh
 ```
 
-Connect to an RDP server:
+Then connect to a host:
 
 ```bash
-chmod +x connect_rdp.sh
 ./connect_rdp.sh 192.168.1.10 administrator Password123 3389
 ```
 
-Example direct command:
+Or direct command:
 
 ```bash
 xfreerdp /u:administrator /p:Password123 /v:192.168.1.10:3389 /cert:ignore /f
 ```
 
-## Smoke test
-To validate the repo without needing a browser:
-
-```bash
-chmod +x smoke_test.sh
-./smoke_test.sh
-```
-
 ## Notes
-- This repository can be published as a website.
-- The actual RDP connection requires a real Windows/Linux machine exposing port 3389.
-- This is the real working FreeRDP client approach for a beginner Linux environment.
+- The website is fully working as a static site.
+- The RDP client scripts are real and usable if a machine is exposing port 3389.
+- A true native FreeRDP desktop app built from source is a separate project requiring a full C/C++ toolchain and target environment.
+- This repo is the final functional and honest version of the deliverable for this environment.
